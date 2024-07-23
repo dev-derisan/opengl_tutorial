@@ -3,8 +3,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
-int main(void)
-{
+int main(void) {
   GLFWwindow* window;
 
   /* Initialize the library */
@@ -13,8 +12,7 @@ int main(void)
 
   /* Create a windowed mode window and its OpenGL context */
   window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
-  if (!window)
-  {
+  if (!window) {
     glfwTerminate();
     return -1;
   }
@@ -23,8 +21,7 @@ int main(void)
   glfwMakeContextCurrent(window);
 
   GLenum err = glewInit();
-  if (GLEW_OK != err)
-  {
+  if (GLEW_OK != err) {
     /* Problem: glewInit failed, something is seriously wrong. */
     std::cerr << "Error: " << glewGetErrorString(err) << std::endl;
   }
@@ -32,8 +29,7 @@ int main(void)
   std::cout << glGetString(GL_VERSION) << std::endl;
 
   /* Loop until the user closes the window */
-  while (!glfwWindowShouldClose(window))
-  {
+  while (!glfwWindowShouldClose(window)) {
     /* Render here */
     glClear(GL_COLOR_BUFFER_BIT);
 
